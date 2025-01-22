@@ -26,5 +26,21 @@ public class servicecliente implements Iservicecliente{
 	public void Agregar(cliente cliente) {
 		repositorycliente.save(cliente);
 	}
+	
+	@Override
+	public cliente buscarPorId(int id) {
+	    return repositorycliente.findById(id).orElse(null);
+	}
+
+	@Override
+	public void Eliminar(int id) {
+	    repositorycliente.deleteById(id);
+	}
+	
+	@Override
+	public List<cliente> buscarPorNombre(String nombre) {
+	    return repositorycliente.findByNombreContaining(nombre);
+	}
+
 
 }

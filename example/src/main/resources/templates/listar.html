@@ -5,7 +5,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-		
+	<form th:action="@{/sistema/buscar}" method="get">
+		<input type="text" name="nombre" placeholder="Buscar por nombre">
+		<button type="submit">Buscar</button>
+	</form>
 	<table border="1">
 		<thead>
 			<tr>
@@ -19,15 +22,19 @@
 				<td th:text="${c.idcliente}"></td>
 				<td th:text="${c.nombre}"></td>
 				<td th:text="${c.dni}"></td>
-				<td >Editar</td>
+				<td><a th:href="@{/sistema/editar(id=${c.idcliente})}">Editar</a>
+					<a th:href="@{/sistema/eliminar(id=${c.idcliente})}"
+					onclick="return confirm('¿Está seguro de eliminar este cliente?')">Eliminar</a>
+					<a th:href="@{/sistema/buscar(id=${c.idcliente})}">Ver Detalle</a></td>
+
 			</tr>
 		</tbody>
 	</table>
-	
+
 	<a th:href="@{/sistema/insertar}">AGREGAR</a>
 
 
 
-	
+
 </body>
 </html>
