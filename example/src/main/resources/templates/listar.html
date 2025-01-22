@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		
+	<table border="1">
+		<thead>
+			<tr>
+				<th>ID CLIENTE</th>
+				<th>NOMBRE</th>
+				<th>DNI</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="c:${clientes}">
+				<td th:text="${c.idcliente}"></td>
+				<td th:text="${c.nombre}"></td>
+				<td th:text="${c.dni}"></td>
+				<td >Editar</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<a th:href="@{/sistema/insertar}">AGREGAR</a>
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>AÑADIR CLIENTE</h3>
+	<form th:action="@{/sistema/insertar}" th:object="${cliente}" method="post">
+		 Nombre:<input type="text" th:field="*{nombre}" required>
+		 DNI:<input type="text" th:field="*{dni}" required>
+		 <input type="submit" value="Agregar">
+	</form>
+</body>
+</html>
